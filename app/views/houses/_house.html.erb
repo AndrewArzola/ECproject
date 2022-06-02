@@ -16,12 +16,18 @@
 
   <p>
     <strong>Plans:</strong>
-    <%= house.plans %>
+    <% if @house.plans.attached? %>
+      <image src = "<%=(url_for(@house.plans))%>">
+    <%end%>
   </p>
 
   <p>
     <strong>Cabinet:</strong>
-    <%= house.cabinet %>
+    <% if @house.cabinet.attached? %>
+      <image src = "<%=(url_for(@house.cabinet))%>">
+    <%else%>
+      No Cabinet Details Uploaded
+    <%end%>
   </p>
 
 </div>
