@@ -1,30 +1,26 @@
 <div id="<%= dom_id house %>">
-  <p>
+  <h2>
     <strong>Address:</strong>
-    <%= house.address %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= house.city %>
-  </p>
-
-  <p>
-    <strong>Zip:</strong>
+    <%= house.address %>,
+    <%= house.city %>, TX
     <%= house.zip %>
-  </p>
+  </h2>
 
   <p>
-    <strong>Plans:</strong>
+    <strong>Plans:</strong><br>
     <% if @house.plans.attached? %>
-      <image src = "<%=(url_for(@house.plans))%>">
+      <image src = "<%=(url_for(@house.plans))%>"><br>
+      <a href="<%=(url_for(@house.plans))%>"target="_blank">View Full Plans</a>
+    <%else%>
+      No Plans Uploaded
     <%end%>
   </p>
 
   <p>
-    <strong>Cabinet:</strong>
+    <strong>Cabinet:</strong><br>
     <% if @house.cabinet.attached? %>
-      <image src = "<%=(url_for(@house.cabinet))%>">
+      <image src = "<%=(url_for(@house.cabinet))%>"><br>
+      <a href="<%=(url_for(@house.cabinet))%>"target="_blank">View Full Cabinet Details</a>
     <%else%>
       No Cabinet Details Uploaded
     <%end%>

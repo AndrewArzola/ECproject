@@ -1,5 +1,5 @@
 class House < ApplicationRecord
-    # validates :paid, inclusion: [true, false]
+    validates :address, :city, :zip, presence: true
     has_one_attached :plans
     has_one_attached :cabinet
 
