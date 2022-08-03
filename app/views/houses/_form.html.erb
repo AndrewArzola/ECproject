@@ -26,8 +26,18 @@
     <%= form.text_field :zip %>
   </div>
 
+  <div class = "form-group">
+  <%= form_for @house do |f|%>
+    <%= f.nested_fields_for :punches do |punch|%>
+      <%= punch.text_field :content %>
+      <%= punch.remove_nested_fields_link %>
+    <%end%>
+    <%= form.add_nested_fields_link :punches%>
+  <%end%>
+  </div>
+
   <div>
-    <%= form.label :plans, style: "display: block" %>
+   <%= form.label :plans, style: "display: block" %>
     <%= form.file_field :plans %>
   </div>
 
@@ -35,6 +45,8 @@
     <%= form.label :cabinet, "Cabinet Details", style: "display: block" %>
     <%= form.file_field :cabinet %>
   </div>
+
+  
 
   <div>
     <%= form.submit %>
