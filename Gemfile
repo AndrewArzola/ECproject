@@ -13,9 +13,9 @@ gem "tzinfo-data"
 gem 'jquery-rails', '~> 4.5'
 gem 'nested_form_fields'
 gem "bootsnap", require: false
-gem 'fog-aws'
-gem "image_processing", ">= 1.2"
 gem "aws-sdk-s3", require: false
+
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
