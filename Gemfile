@@ -10,8 +10,11 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data"
+gem 'jquery-rails', '~> 4.5'
+gem 'nested_form_fields'
 gem "bootsnap", require: false
 gem "aws-sdk-s3", require: false
+
 
 
 group :development, :test do
