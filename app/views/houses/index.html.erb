@@ -2,32 +2,37 @@
 
 <h1>Houses</h1>
 
-<%# <div id="houses"> %>
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr class="table-light">  
-        <th>Address</th>
-        <th>City</th>
-        <th>Zip</th>
-        <th>Plans</th>
-        <th>Cabinet</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @houses.each do |house| %>
-      <tr>
-        <td><%= house.address%></td>
-        <td><%= house.city%></td>
-        <td><%= house.zip%></td>
-        <td><%= house.plans_show(house.plans?) %></td>
-        <td><%= house.plans_show(house.cabinet?)%></td>
-        <td><%= link_to 'Show', house %></td>
-        <td><%= link_to 'Edit', edit_house_path(house) %></td>
-        <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-      </tr>
-  </table>
-<%# </div> %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive fixed-table-body">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr class="table-light">  
+              <th>Address</th>
+              <th>City</th>
+              <th>Zip</th>
+              <th>Plans</th>
+              <th>Cabinet</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @houses.each do |house| %>
+            <tr>
+              <td><%= house.address%></td>
+              <td><%= house.city%></td>
+              <td><%= house.zip%></td>
+              <td><%= house.plans_show(house.plans?) %></td>
+              <td><%= house.plans_show(house.cabinet?)%></td>
+              <td><%= link_to 'Show', house %></td>
+              <td><%= link_to 'Edit', edit_house_path(house) %></td>
+            <% end %>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= link_to "New house", new_house_path, class:"btn btn-outline-dark btn-sm" %>

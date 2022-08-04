@@ -3,8 +3,9 @@
 <%= render @house %>
 
 <div class = "container">
-  <br><%= button_to "Delete", @house, class:"btn btn-outline-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' }  %><br>
+  <br>
   <%= link_to "Edit", edit_house_path(@house), class:"btn btn-outline-dark btn-sm"  %> |
   <%= link_to "Back", houses_path, class:"btn btn-outline-dark btn-sm"  %>
+  <br><br>
   
 </div>

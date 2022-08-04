@@ -12,31 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label :address, "Address", style: "display: block" %>
+    <%= form.label :Address, style: "display: block" %>
     <%= form.text_field :address %>
   </div>
 
   <div>
-    <%= form.label :city, style: "display: block" %>
+    <%= form.label :City, style: "display: block" %>
     <%= form.text_field :city %>
   </div>
 
   <div>
-    <%= form.label :zip, style: "display: block" %>
+    <%= form.label :Zip, style: "display: block" %>
     <%= form.text_field :zip %>
   </div>
-
+  <br>
   <div>
     <%= form.label :plans, style: "display: block" %>
     <%= form.file_field :plans %>
   </div>
-
+  <br>
   <div>
     <%= form.label :cabinet, "Cabinet Details", style: "display: block" %>
     <%= form.file_field :cabinet %>
   </div>
-
-  <div>
-    <%= form.submit %>
+  <br><br>
+  <div class="actions">
+    <%= form.submit :"Save", class:"btn btn-outline-dark btn-lg"%>
   </div>
 <% end %>
