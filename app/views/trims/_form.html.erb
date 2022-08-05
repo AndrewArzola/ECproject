@@ -1,0 +1,28 @@
+<%= form_with(model: trim) do |form| %>
+  <% if trim.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(trim.errors.count, "error") %> prohibited this trim from being saved:</h2>
+
+      <ul>
+        <% trim.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div>
+    <%= form.label :house_id, style: "display: block" %>
+    <%# <%= form.text_field :house_id %>
+    <%= collection_select( :trim, :house_id, House.all, :id, :address, include_blank: 'None') %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
