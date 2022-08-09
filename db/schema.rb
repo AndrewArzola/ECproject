@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_09_160632) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_09_194142) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -57,6 +57,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_160632) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "roughs", force: :cascade do |t|
+    t.string "content"
+    t.boolean "picture"
+    t.integer "house_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "completed"
+    t.index ["house_id"], name: "index_roughs_on_house_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "content"
+    t.boolean "picture"
+    t.integer "completed"
+    t.integer "house_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["house_id"], name: "index_services_on_house_id"
+  end
+
   create_table "trims", force: :cascade do |t|
     t.string "content"
     t.integer "house_id", null: false
@@ -69,5 +89,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_160632) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "roughs", "houses"
+  add_foreign_key "services", "houses"
   add_foreign_key "trims", "houses"
 end

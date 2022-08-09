@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Roughs</h1>
+
+<div id="roughs">
+  <% @roughs.each do |rough| %>
+    <%= render rough %>
+    <p>
+      <%= link_to "Show this rough", rough %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New rough", new_rough_path %>

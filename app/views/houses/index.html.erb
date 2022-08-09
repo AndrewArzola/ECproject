@@ -1,5 +1,4 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Houses</h1>
 
 <div class="container">
@@ -9,9 +8,9 @@
         <table class="table table-striped table-hover">
           <thead>
             <tr class="table-light">  
-              <th>Address</th>
-              <th>City</th>
-              <th>Zip</th>
+              <th><%= link_to "Address", :sort => "address"%></th>
+              <th><%= link_to "City", :sort => "city"%></th>
+              <th><%= link_to "Zip", :sort => "zip"%></th>
               <th>Plans</th>
               <th>Cabinet</th>
               <th colspan="2"></th>

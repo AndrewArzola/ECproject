@@ -1,0 +1,32 @@
+<div id="<%= dom_id service %>">
+  <div class="card" style="width: 18rem;">
+    <% if service.picture.attached? %>
+      <img class="card-img-top" src="<%=(url_for(service.picture))%>">
+      <div class="card-body">
+        <p class = "card-text">
+        <%= service.content%><br>
+        <a href="<%=(url_for(service.picture))%>"target="_blank">View Full Picture</a>
+        </p>
+        <p class = "card-text">
+          <% if Person.where(id: service.completed).exists?%>
+            <%= Person.where(id: service.completed).last.full_name%>
+          <%else%>
+            <%= link_to "In Progess", edit_service_path(service) %>
+          <%end%>
+      </div>
+    <%else%>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= service.content%></li>
+        <li class="list-group-item">
+        <% if Person.where(id: service.completed).exists?%>
+          <%= Person.where(id: service.completed).last.full_name%>
+        <%else%>
+          <%= link_to "In Progess", edit_service_path(service) %>
+        <%end%>
+        </li>
+        
+      </ul>
+    <%end%>
+  </div>
+  <br>
+</div>

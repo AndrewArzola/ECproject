@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+<h1>
+<%= House.where(id: @rough.house_id).last.address%>
+</h1>
+<%= render @rough %>
+
+<div>
+  <%= link_to "Edit this rough", edit_rough_path(@rough) %> |
+  <%= link_to "Back to roughs", roughs_path %>
+
+  <%= button_to "Destroy this rough", @rough, method: :delete %>
+</div>

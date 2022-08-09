@@ -26,10 +26,30 @@
     <%end%>
   </p>
   <p>
-    <strong>Trim:</strong><br>
+    <strong>Rough In:</strong><br>
+    <% Rough.all.each do |r| %>
+      <%if house.id == r.house_id%>
+        <%= render r %> 
+      <%end%>
+    <%end%>
+  </p>
+  <%= link_to "Add Rough Task", new_rough_path, class:"btn btn-outline-dark btn-sm"  %>
+  <p>
+    <strong>Trim Out:</strong><br>
     <% Trim.all.each do |trim| %>
       <%if house.id == trim.house_id%>
         <%= render trim %> 
       <%end%>
     <%end%>
+  </p>
+  <%= link_to "Add Trim Task", new_trim_path, class:"btn btn-outline-dark btn-sm"  %>
+  <p>
+    <strong>Service Call:</strong><br>
+    <% Service.all.each do |s| %>
+      <%if house.id == s.house_id%>
+        <%= render s %> 
+      <%end%>
+    <%end%>
+  </p>
+  <%= link_to "Add Service Task", new_service_path, class:"btn btn-outline-dark btn-sm"  %>
 </div>
