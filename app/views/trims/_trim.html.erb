@@ -1,0 +1,32 @@
+<div id="<%= dom_id trim %>">
+  <div class="card" style="width: 18rem;">
+    <% if trim.picture.attached? %>
+      <img class="card-img-top" src="<%=(url_for(trim.picture))%>">
+      <a href="<%=(url_for(trim.picture))%>"target="_blank">View Full Picture</a>
+      <div class="card-body">
+        <p class = "card-text">
+        <%= trim.content%><br>
+        </p>
+        <p class = "card-text">
+          <% if Person.where(id: trim.completed).exists?%>
+            <%= Person.where(id: trim.completed).last.full_name%>
+          <%else%>
+            <%= link_to "In Progess", edit_trim_path(trim) %>
+          <%end%>
+      </div>
+    <%else%>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= trim.content%></li>
+        <li class="list-group-item">
+        <% if Person.where(id: trim.completed).exists?%>
+          <%= Person.where(id: trim.completed).last.full_name%>
+        <%else%>
+          <%= link_to "In Progess", edit_trim_path(trim) %>
+        <%end%>
+        </li>
+        
+      </ul>
+    <%end%>
+  </div>
+  <br>
+</div>

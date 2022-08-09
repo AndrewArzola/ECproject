@@ -3,9 +3,18 @@ class HousesController < ApplicationController
 
   # GET /houses or /houses.json
   def index
-    @houses = House.all
+    if params[:search]
+      search_houses
+    else
+      @houses = House.order(params[:sort])
+    end
   end
-
+  
+  def search_houses
+    if @houses = House.all.find{|house| house.address.include?(params[:search])}
+      redirect_to @houses
+    end
+  end
   # GET /houses/1 or /houses/1.json
   def show
   end

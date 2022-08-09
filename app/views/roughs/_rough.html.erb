@@ -1,0 +1,32 @@
+<div id="<%= dom_id rough %>">
+  <div class="card" style="width: 18rem;">
+    <% if rough.picture.attached? %>
+      <img class="card-img-top" src="<%=(url_for(rough.picture))%>">
+      <a href="<%=(url_for(rough.picture))%>"target="_blank">View Full Picture</a>
+      <div class="card-body">
+        <p class = "card-text">
+        <%= rough.content%><br>
+        </p>
+        <p class = "card-text">
+          <% if Person.where(id: rough.completed).exists?%>
+            <%= Person.where(id: rough.completed).last.full_name%>
+          <%else%>
+            <%= link_to "In Progess", edit_rough_path(rough) %>
+          <%end%>
+      </div>
+    <%else%>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= rough.content%></li>
+        <li class="list-group-item">
+        <% if Person.where(id: rough.completed).exists?%>
+          <%= Person.where(id: rough.completed).last.full_name%>
+        <%else%>
+          <%= link_to "In Progess", edit_rough_path(rough) %>
+        <%end%>
+        </li>
+        
+      </ul>
+    <%end%>
+  </div>
+  <br>
+</div>

@@ -1,0 +1,34 @@
+<%= form_with(model: rough) do |form| %>
+  <% if rough.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(rough.errors.count, "error") %> prohibited this rough from being saved:</h2>
+
+      <ul>
+        <% rough.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_field :content %>
+  </div>
+  <div>
+    <%= form.label :house_id, style: "display: block" %>
+    <%= collection_select( :rough, :house_id, House.all, :id, :address, include_blank: 'None') %>
+  </div>
+  <div>
+    <%= form.label :picture, style: "display: block" %>
+    <%= form.file_field :picture %>
+  </div>
+  <div>
+   <%= form.label :completed, style: "display: block" %>
+    <%= collection_select( :rough, :completed, Person.all, :id, :full_name, include_blank: 'None') %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

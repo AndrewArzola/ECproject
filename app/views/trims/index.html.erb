@@ -1,0 +1,93 @@
+<p style="color: green"><%= notice %></p>
+<h1>Rough In</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive fixed-table-body">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr class="table-light">  
+              <th>Address</th>
+              <th>Content</th>
+              <th>Picture</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% Rough.all.each do |rough| %>
+            <tr>
+              <td><%= House.where(id: rough.house_id).last.address%></td>
+              <td><%= rough.content%></td>
+              <td><%= rough.has_pic(rough.picture?) %></td>
+              <td><%= link_to 'Show',rough %></td>
+              <td><%= link_to 'Edit', edit_rough_path(rough) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to "New Rough In", new_rough_path, class:"btn btn-outline-dark btn-sm" %>
+<br>
+<h1>Trim Out</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive fixed-table-body">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr class="table-light">  
+              <th>Address</th>
+              <th>Content</th>
+              <th>Picture</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @trims.each do |trim| %>
+            <tr>
+              <td><%= House.where(id: trim.house_id).last.address%></td>
+              <td><%= trim.content%></td>
+              <td><%= trim.has_pic(trim.picture?) %></td>
+              <td><%= link_to 'Show', trim %></td>
+              <td><%= link_to 'Edit', edit_trim_path(trim) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to "New Trim Out", new_trim_path, class:"btn btn-outline-dark btn-sm" %>
+<br>
+<h1>Service Calls</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive fixed-table-body">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr class="table-light">  
+              <th>Address</th>
+              <th>Content</th>
+              <th>Picture</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% Service.all.each do |service| %>
+            <tr>
+              <td><%= House.where(id: service.house_id).last.address%></td>
+              <td><%= service.content%></td>
+              <td><%= service.has_pic(service.picture?) %></td>
+              <td><%= link_to 'Show', service %></td>
+              <td><%= link_to 'Edit', edit_service_path(service) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to "New Service Call", new_service_path, class:"btn btn-outline-dark btn-sm" %>

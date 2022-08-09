@@ -1,7 +1,7 @@
-class CreatePunches < ActiveRecord::Migration[7.0]
+class CreateTrims < ActiveRecord::Migration[7.0]
   def change
-    create_table :punches do |t|
-      t.text :content
+    create_table :trims do |t|
+      t.string :content
       t.belongs_to :house, null: false, foreign_key: true
 
       t.timestamps

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+<h1>
+<%= House.where(id: @rough.house_id).last.address%>
+</h1>
+<%= render @rough %>
+
+<div>
+  <%= link_to "Edit this rough", edit_rough_path(@rough), class:"btn btn-outline-dark btn-sm" %> |
+  <%= link_to "Back to roughs", roughs_path, class:"btn btn-outline-dark btn-sm" %>
+</div>

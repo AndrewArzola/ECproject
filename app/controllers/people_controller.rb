@@ -3,9 +3,18 @@ class PeopleController < ApplicationController
 
   # GET /people or /people.json
   def index
-    @people = Person.all
+    if params[:search]
+      search_people
+    else
+      @people = Person.order(params[:sort])
+    end
   end
-
+  
+  def search_people
+    if @people= Person.all.find{|person| person.fname.include?(params[:search])}
+      redirect_to person_path(@person)
+    end
+  end
   # GET /people/1 or /people/1.json
   def show
   end
