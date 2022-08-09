@@ -11,7 +11,7 @@
               <th><%= link_to "First Name", :sort => "fname"%></th>
               <th><%= link_to "Last Name", :sort => "lname"%></th>
               <th>Email</th>
-              <th colspan="3"></th>
+              <th colspan="2"></th>
             </tr>
           </thead>
           <tbody>
@@ -22,7 +22,6 @@
                 <td><%= person.email%></td>
                 <td><%= link_to 'Show', person %></td>
                 <td><%= link_to 'Edit', edit_person_path(person) %></td>
-                <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
         </table>

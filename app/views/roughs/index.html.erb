@@ -6,9 +6,9 @@
   <% @roughs.each do |rough| %>
     <%= render rough %>
     <p>
-      <%= link_to "Show this rough", rough %>
+      <%= link_to "Show this rough", rough, class:"btn btn-outline-dark btn-sm" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New rough", new_rough_path %>
+<%= link_to "New rough", new_rough_path, class:"btn btn-outline-dark btn-sm" %>

@@ -2,10 +2,10 @@
   <div class="card" style="width: 18rem;">
     <% if rough.picture.attached? %>
       <img class="card-img-top" src="<%=(url_for(rough.picture))%>">
+      <a href="<%=(url_for(rough.picture))%>"target="_blank">View Full Picture</a>
       <div class="card-body">
         <p class = "card-text">
         <%= rough.content%><br>
-        <a href="<%=(url_for(rough.picture))%>"target="_blank">View Full Picture</a>
         </p>
         <p class = "card-text">
           <% if Person.where(id: rough.completed).exists?%>

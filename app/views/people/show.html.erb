@@ -3,7 +3,6 @@
 <%= render @person %>
 
 <div>
-  <%= button_to "Destroy this person", @person, class:"btn btn-outline-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %><br>
   <%= link_to "Edit this person", edit_person_path(@person), class:"btn btn-outline-dark btn-sm" %> |
   <%= link_to "Back to people", people_path, class:"btn btn-outline-dark btn-sm" %>
 </div>

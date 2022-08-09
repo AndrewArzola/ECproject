@@ -5,6 +5,9 @@
 <br>
 
 <div>
-  <%= link_to "Show this rough", @rough %> |
-  <%= link_to "Back to roughs", roughs_path %>
+  <%= link_to "Show this rough", @rough, class:"btn btn-outline-dark btn-sm" %> |
+  <%= link_to "Back to roughs", roughs_path, class:"btn btn-outline-dark btn-sm" %>
+  <br><br>
+  <%= button_to "Destroy this rough", @rough, class:"btn btn-outline-danger btn-sm", method: :delete %> 
+
 </div>
