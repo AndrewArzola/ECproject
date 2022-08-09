@@ -11,7 +11,7 @@
           <% if Person.where(id: trim.completed).exists?%>
             <%= Person.where(id: trim.completed).last.fname%>
           <%else%>
-            <%= link_to "In Progess", edit_trim_path(@trim) %>
+            <%= link_to "In Progess", edit_trim_path(trim) %>
           <%end%>
       </div>
     <%else%>
