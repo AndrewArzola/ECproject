@@ -9,7 +9,7 @@
         </p>
         <p class = "card-text">
           <% if Person.where(id: trim.completed).exists?%>
-            <%= Person.where(id: trim.completed).last.fname%>
+            <%= Person.where(id: trim.completed).last.full_name%>
           <%else%>
             <%= link_to "In Progess", edit_trim_path(trim) %>
           <%end%>
@@ -19,7 +19,7 @@
         <li class="list-group-item"><%= trim.content%></li>
         <li class="list-group-item">
         <% if Person.where(id: trim.completed).exists?%>
-          <%= Person.where(id: trim.completed).last.fname%>
+          <%= Person.where(id: trim.completed).last.full_name%>
         <%else%>
           <%= link_to "In Progess", edit_trim_path(trim) %>
         <%end%>

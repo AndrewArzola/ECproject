@@ -27,7 +27,7 @@
   </div>
   <div>
    <%= form.label :completed, style: "display: block" %>
-    <%= collection_select( :trim, :completed, Person.all, :id, :fname, include_blank: 'None') %>
+    <%= collection_select( :trim, :completed, Person.all, :id, :full_name, include_blank: 'None') %>
   </div>
 
   <div>
