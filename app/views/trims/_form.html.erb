@@ -21,6 +21,14 @@
     <%# <%= form.text_field :house_id %>
     <%= collection_select( :trim, :house_id, House.all, :id, :address, include_blank: 'None') %>
   </div>
+  <div>
+   <%= form.label :picture, style: "display: block" %>
+    <%= form.file_field :picture %>
+  </div>
+  <div>
+   <%= form.label :completed, style: "display: block" %>
+    <%= collection_select( :trim, :completed, Person.all, :id, :fname, include_blank: 'None') %>
+  </div>
 
   <div>
     <%= form.submit %>

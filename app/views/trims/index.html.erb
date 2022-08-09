@@ -1,14 +1,32 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Trims</h1>
-
-<div id="trims">
-  <% @trims.each do |trim| %>
-    <%= render trim %>
-    <p>
-      <%= link_to "Show this trim", trim %>
-    </p>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive fixed-table-body">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr class="table-light">  
+              <th>Address</th>
+              <th>Content</th>
+              <th>Picture</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @trims.each do |trim| %>
+            <tr>
+              <td><%= House.where(id: trim.house_id).last.address%></td>
+              <td><%= trim.content%></td>
+              <td><%= trim.has_pic(trim.picture?) %></td>
+              <td><%= link_to 'Show', trim %></td>
+              <td><%= link_to 'Edit', edit_trim_path(trim) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-
 <%= link_to "New trim", new_trim_path %>

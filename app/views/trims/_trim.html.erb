@@ -1,12 +1,32 @@
 <div id="<%= dom_id trim %>">
-  <p>
-    <strong>Content:</strong>
-    <%= trim.content %>
-  </p>
-
-  <p>
-    <strong>House:</strong>
-    <%= trim.house_id %>
-  </p>
-
+  <div class="card" style="width: 18rem;">
+    <% if trim.picture.attached? %>
+      <img class="card-img-top" src="<%=(url_for(trim.picture))%>">
+      <div class="card-body">
+        <p class = "card-text">
+        <%= trim.content%><br>
+        <a href="<%=(url_for(trim.picture))%>"target="_blank">View Full Picture</a>
+        </p>
+        <p class = "card-text">
+          <% if Person.where(id: trim.completed).exists?%>
+            <%= Person.where(id: trim.completed).last.fname%>
+          <%else%>
+            <%= link_to "In Progess", edit_trim_path(@trim) %>
+          <%end%>
+      </div>
+    <%else%>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= trim.content%></li>
+        <li class="list-group-item">
+        <% if Person.where(id: trim.completed).exists?%>
+          <%= Person.where(id: trim.completed).last.fname%>
+        <%else%>
+          <%= link_to "In Progess", edit_trim_path(trim) %>
+        <%end%>
+        </li>
+        
+      </ul>
+    <%end%>
+  </div>
+  <br>
 </div>

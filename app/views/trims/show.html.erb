@@ -1,5 +1,13 @@
 <p style="color: green"><%= notice %></p>
-
+<h1>
+<%= House.where(id: @trim.house_id).last.address%>
+<br>
+<% if Person.where(id: @trim.completed).exists?%>
+  <%= Person.where(id: @trim.completed).last.fname%>
+<%else%>
+  In Progress
+<%end%>
+</h1>
 <%= render @trim %>
 
 <div>

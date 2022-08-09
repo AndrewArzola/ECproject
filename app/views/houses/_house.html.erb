@@ -25,5 +25,11 @@
       No Cabinet Details Uploaded
     <%end%>
   </p>
-    
+  <p>
+    <strong>Trim:</strong><br>
+    <% Trim.all.each do |trim| %>
+      <%if house.id == trim.house_id%>
+        <%= render trim %> 
+      <%end%>
+    <%end%>
 </div>

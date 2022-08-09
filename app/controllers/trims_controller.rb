@@ -1,6 +1,5 @@
 class TrimsController < ApplicationController
   before_action :set_trim, only: %i[ show edit update destroy ]
-
   # GET /trims or /trims.json
   def index
     @trims = Trim.all
@@ -65,6 +64,6 @@ class TrimsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trim_params
-      params.require(:trim).permit(:content, :house_id)
+      params.require(:trim).permit(:content, :house_id,:picture, :completed)
     end
 end

@@ -23,8 +23,8 @@
               <td><%= house.address%></td>
               <td><%= house.city%></td>
               <td><%= house.zip%></td>
-              <td><%= house.plans_show(house.plans?) %></td>
-              <td><%= house.plans_show(house.cabinet?)%></td>
+              <td><%= house.has_pic(house.plans?) %></td>
+              <td><%= house.has_pic(house.cabinet?)%></td>
               <td><%= link_to 'Show', house %></td>
               <td><%= link_to 'Edit', edit_house_path(house) %></td>
             <% end %>
