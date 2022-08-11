@@ -10,25 +10,40 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_field :content %>
-  </div>
-  <div>
-    <%= form.label :house_id, style: "display: block" %>
-    <%= collection_select( :rough, :house_id, House.all, :id, :address, include_blank: 'None') %>
-  </div>
-  <div>
-    <%= form.label :picture, style: "display: block" %>
-    <%= form.file_field :picture %>
-  </div>
-  <div>
-   <%= form.label :completed, style: "display: block" %>
-    <%= collection_select( :rough, :completed, Person.all, :id, :full_name, include_blank: 'None') %>
-  </div>
-  <br><br>
-  <div>
-    <%= form.submit :"Save", class:"btn btn-outline-dark btn-lg"%>
+  <div class = "container">
+    <div>
+      <%= form.label :house_id, "Address", style: "display: block" %>
+      <%= collection_select( :rough, :house_id, House.all, :id, :address, include_blank: 'None') %>
+    </div>
+    <br>
+    <div class = "row">
+      <div class = "col">
+        <div>
+          <%= form.label :picture,"Upload Photo", style: "display: block" %>
+          <%= form.file_field :picture %>
+        </div>
+        <br>
+        <div>
+          <%= form.label :Content, style: "display: block" %>
+          <%= form.text_field :content %>
+        </div>
+        <br><br>
+      </div>
+      <div class = "col">
+        <div>
+          <%= form.label :completed, "Who Completed This", style: "display: block" %>
+          <%= collection_select( :rough, :completed, Person.all, :id, :full_name, include_blank: 'None') %>
+        </div>
+        <br>
+        <div>
+          <%= form.label :Notes, style: "display: block" %>
+          <%= form.text_field :notes %>
+        </div>
+      </div>
+    </div>
+    <div>
+      <br>
+      <%= form.submit :"Save", class:"btn btn-outline-dark btn-lg"%>
+    </div>
   </div>
 <% end %>

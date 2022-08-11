@@ -9,22 +9,28 @@
         </p>
         <p class = "card-text">
           <% if Person.where(id: rough.completed).exists?%>
+            <%= rough.notes%> - 
             <%= Person.where(id: rough.completed).last.full_name%>
           <%else%>
+            Note:
+            <%= rough.notes%><br>
             <%= link_to "In Progess", edit_rough_path(rough) %>
           <%end%>
+        </p>
       </div>
     <%else%>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><%= rough.content%></li>
         <li class="list-group-item">
         <% if Person.where(id: rough.completed).exists?%>
+          <%= rough.notes%> -
           <%= Person.where(id: rough.completed).last.full_name%>
         <%else%>
+          Note:
+          <%= rough.notes%><br>
           <%= link_to "In Progess", edit_rough_path(rough) %>
         <%end%>
         </li>
-        
       </ul>
     <%end%>
   </div>

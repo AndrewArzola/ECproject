@@ -65,6 +65,6 @@ class RoughsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def rough_params
-      params.require(:rough).permit(:content, :picture, :house_id, :completed)
+      params.require(:rough).permit(:content, :picture, :house_id, :completed, :notes)
     end
 end

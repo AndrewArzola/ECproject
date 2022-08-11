@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_09_194142) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_11_010333) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_194142) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "completed"
+    t.string "notes"
     t.index ["house_id"], name: "index_roughs_on_house_id"
   end
 
@@ -74,6 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_194142) do
     t.integer "house_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "notes"
     t.index ["house_id"], name: "index_services_on_house_id"
   end
 
@@ -84,6 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_194142) do
     t.datetime "updated_at", null: false
     t.boolean "picture"
     t.integer "completed"
+    t.string "notes"
     t.index ["house_id"], name: "index_trims_on_house_id"
   end
 

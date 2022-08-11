@@ -9,8 +9,11 @@
         </p>
         <p class = "card-text">
           <% if Person.where(id: service.completed).exists?%>
+            <%= service.notes%> - 
             <%= Person.where(id: service.completed).last.full_name%>
           <%else%>
+            Note:
+            <%= service.notes%><br>
             <%= link_to "In Progess", edit_service_path(service) %>
           <%end%>
         </p>
@@ -21,12 +24,14 @@
         <li class="list-group-item">
         
         <% if Person.where(id: service.completed).exists?%>
+          <%= service.notes%> - 
           <%= Person.where(id: service.completed).last.full_name%>
         <%else%>
+          Note:
+          <%= service.notes%><br>
           <%= link_to "In Progess", edit_service_path(service) %>
         <%end%>
         </li>
-        
       </ul>
     <%end%>
   </div>
