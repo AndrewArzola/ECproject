@@ -29,8 +29,8 @@
    <%= form.label :completed, style: "display: block" %>
     <%= collection_select( :service, :completed, Person.all, :id, :full_name, include_blank: 'None') %>
   </div>
-
+  <br><br>
   <div>
-    <%= form.submit %>
+    <%= form.submit :"Save", class:"btn btn-outline-dark btn-lg"%>
   </div>
 <% end %>
