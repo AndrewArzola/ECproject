@@ -1,5 +1,7 @@
 <div id="<%= dom_id service %>">
   <div class="card" style="width: 18rem;">
+    Last Update: 
+    <%= service.updated_at.in_time_zone('America/Chicago').strftime("%m/%d/%Y %I:%M%p")%><br>
     <% if service.picture.attached? %>
       <img class="card-img-top" src="<%=(url_for(service.picture))%>">
       <a href="<%=(url_for(service.picture))%>"target="_blank">View Full Picture</a>
