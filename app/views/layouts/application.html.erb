@@ -16,11 +16,57 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
   <body>
-    <%= render 'home/header'%>
-    <div class = "container">
-      <%= yield %>
-      <br><br>
+    <div class = "wrapper">
+      <%= render 'home/header'%>
+      <div class = "container">
+        <%= yield %>
+        <br><br>
+      </div>
+      <div class = "push"></div>
     </div>
+    <footer class="bg-light text-center text-lg-start footer">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h6 class="text-uppercase">About</h6>
+
+            <p>
+              Electric City is comitted to service and quality for all your electrical needs.
+              This website was made to help Electric City organize houses, 
+              punch lists, and plans. <br>Made by Andrew J Arzola.
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p>
+              <i class="fas fa-envelope me-3 text-grayish"></i>
+              <a href="mailto:frankarzola@att.net">frankarzola@att.net</a>
+            </p>
+            <p>
+              <i class="fas fa-phone me-3 text-grayish"></i>
+              <a href="tel:210-643-8627">(210)643-8627</a>
+            </p>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2011 Copyright:
+        <a class="text-dark" href="#">Electric City LLC</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

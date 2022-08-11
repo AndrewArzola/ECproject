@@ -17,3 +17,18 @@
     width: 100%;
     height: auto;
  }
+ html, body {
+   height: 100%;
+   margin: 0;
+ }
+ .wrapper {
+   min-height: 100%;
+ 
+   /* Equal to height of footer */
+   /* But also accounting for potential margin-bottom of last child */
+   margin-bottom: -230px;
+ }
+ .footer,
+ .push {
+   height: 230px;
+ }
