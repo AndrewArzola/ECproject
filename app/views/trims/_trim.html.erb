@@ -1,5 +1,7 @@
 <div id="<%= dom_id trim %>">
   <div class="card" style="width: 18rem;">
+    Last Update: 
+    <%= trim.updated_at.in_time_zone('America/Chicago').strftime("%m/%d/%Y %I:%M%p")%><br>
     <% if trim.picture.attached? %>
       <img class="card-img-top" src="<%=(url_for(trim.picture))%>">
       <a href="<%=(url_for(trim.picture))%>"target="_blank">View Full Picture</a>
