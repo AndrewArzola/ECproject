@@ -64,6 +64,6 @@ class TrimsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trim_params
-      params.require(:trim).permit(:content, :house_id,:picture, :completed)
+      params.require(:trim).permit(:content, :house_id,:picture, :completed, :notes)
     end
 end

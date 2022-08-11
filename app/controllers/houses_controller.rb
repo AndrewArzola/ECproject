@@ -31,7 +31,6 @@ class HousesController < ApplicationController
   # POST /houses or /houses.json
   def create
     @house = House.new(house_params)
-
     respond_to do |format|
       if @house.save
         format.html { redirect_to house_url(@house), notice: "House was successfully created." }

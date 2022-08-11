@@ -9,6 +9,7 @@
             <tr class="table-light">  
               <th>Address</th>
               <th>Content</th>
+              <th>Notes</th>
               <th>Picture</th>
               <th colspan="2"></th>
             </tr>
@@ -18,6 +19,7 @@
             <tr>
               <td><%= House.where(id: rough.house_id).last.address%></td>
               <td><%= rough.content%></td>
+              <td><%= rough.notes%></td>
               <td><%= rough.has_pic(rough.picture?) %></td>
               <td><%= link_to 'Show',rough %></td>
               <td><%= link_to 'Edit', edit_rough_path(rough) %></td>
@@ -27,11 +29,9 @@
       </div>
     </div>
   </div>
-</div>
-<%= link_to "New Rough In", new_rough_path, class:"btn btn-outline-dark btn-sm" %>
-<br>
-<h1>Trim Out</h1>
-<div class="container">
+  <%= link_to "New Rough In", new_rough_path, class:"btn btn-outline-dark btn-sm" %>
+  <br>
+  <h1>Trim Out</h1>
   <div class="row">
     <div class="col-md-12">
       <div class="table-responsive fixed-table-body">
@@ -40,6 +40,7 @@
             <tr class="table-light">  
               <th>Address</th>
               <th>Content</th>
+              <th>Notes</th>
               <th>Picture</th>
               <th colspan="2"></th>
             </tr>
@@ -49,6 +50,7 @@
             <tr>
               <td><%= House.where(id: trim.house_id).last.address%></td>
               <td><%= trim.content%></td>
+              <td><%= trim.notes%></td>
               <td><%= trim.has_pic(trim.picture?) %></td>
               <td><%= link_to 'Show', trim %></td>
               <td><%= link_to 'Edit', edit_trim_path(trim) %></td>
@@ -58,11 +60,9 @@
       </div>
     </div>
   </div>
-</div>
-<%= link_to "New Trim Out", new_trim_path, class:"btn btn-outline-dark btn-sm" %>
-<br>
-<h1>Service Calls</h1>
-<div class="container">
+  <%= link_to "New Trim Out", new_trim_path, class:"btn btn-outline-dark btn-sm" %>
+  <br>
+  <h1>Service Calls</h1>
   <div class="row">
     <div class="col-md-12">
       <div class="table-responsive fixed-table-body">
@@ -71,6 +71,7 @@
             <tr class="table-light">  
               <th>Address</th>
               <th>Content</th>
+              <th>Notes</th>
               <th>Picture</th>
               <th colspan="2"></th>
             </tr>
@@ -80,6 +81,7 @@
             <tr>
               <td><%= House.where(id: service.house_id).last.address%></td>
               <td><%= service.content%></td>
+              <td><%= service.notes%></td>
               <td><%= service.has_pic(service.picture?) %></td>
               <td><%= link_to 'Show', service %></td>
               <td><%= link_to 'Edit', edit_service_path(service) %></td>
@@ -89,5 +91,5 @@
       </div>
     </div>
   </div>
-</div>
 <%= link_to "New Service Call", new_service_path, class:"btn btn-outline-dark btn-sm" %>
+</div>
