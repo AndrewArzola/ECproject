@@ -6,9 +6,10 @@
   <% @services.each do |service| %>
     <%= render service %>
     <p>
-      <%= link_to "Show this service", service %>
+      <%= link_to "Show this service", service, class:"btn btn-outline-dark btn-sm" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New service", new_service_path %>
+<%= link_to "New service", new_service_path, class:"btn btn-outline-dark btn-sm" %>
+
