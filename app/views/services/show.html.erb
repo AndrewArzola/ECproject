@@ -5,6 +5,7 @@
 <%= render @service %>
 
 <div>
+  <%= link_to "New service", new_service_path, class:"btn btn-outline-dark btn-sm" %> | 
   <%= link_to "Edit this service", edit_service_path(@service), class:"btn btn-outline-dark btn-sm" %> |
   <%= link_to "Back", houses_path, class:"btn btn-outline-dark btn-sm"  %>
 </div>
