@@ -73,8 +73,6 @@ class HousesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def house_params
-      params.require(:house).permit(:address, 
-        :city, :zip, :plans, :cabinet)
-        # punch_attributes:[:id, :content, :_destroy]
+      params.require(:house).permit(:address, :city, :zip, plans: [], cabinet: [])
     end
 end
