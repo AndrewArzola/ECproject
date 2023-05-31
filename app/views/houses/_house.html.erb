@@ -9,8 +9,10 @@
   <p>
     <h3>Plans:</h3><br>
     <% if @house.plans.attached? %>
-      <image src = "<%=(url_for(@house.plans))%>"><br>
-      <a href="<%=(url_for(@house.plans))%>"target="_blank">View Full Plans</a>
+      <% @house.plans.each do |plan| %>
+        <image src="<%= url_for(plan) %>"><br>
+        <a href="<%= url_for(plan) %>" target="_blank">View Full Plans</a>
+      <% end %>
     <%else%>
       No Plans Uploaded
     <%end%>
