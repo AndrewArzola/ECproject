@@ -1,5 +1,5 @@
 class House < ApplicationRecord
-    validates :address, :city, :zip, presence: true
+    validates :address, :city, presence: true
     has_many_attached :plans
     has_one_attached :cabinet
     has_many :trims, dependent: :destroy
