@@ -10,6 +10,7 @@
             <tr class="table-light">  
               <th><%= link_to "Address", :sort => "address"%></th>
               <th><%= link_to "City", :sort => "city"%></th>
+              <th>Gate Code</th>
               <th>Plans</th>
               <th colspan="2"></th>
             </tr>
@@ -19,6 +20,7 @@
             <tr>
               <td><%= house.address%></td>
               <td><%= house.city%></td>
+              <td><%= house.zip%></td>
               <td><%= house.has_pic(house.plans?) %></td>
               <td><%= link_to 'Show', house %></td>
               <td><%= link_to 'Edit', edit_house_path(house) %></td>
